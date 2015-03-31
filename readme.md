@@ -21,9 +21,9 @@ http://someurl.com/?appId=1f4d06a3690f46d56bd1da598f65de6f&BID=3051&isTest#/
 http://someurl.com/?appId=1f4d06a3690f46d56bd1da598f65de6f&BID=3051&isTest#/
 ```
 ```javascript
-getParam( "appId" ); // "1f4d06a3690f46d56bd1da598f65de6f"
-getParam( "isTest" ); // null
-getParam( "notExist" ); // undefined
+UrlParser.getParam( "appId" ); // "1f4d06a3690f46d56bd1da598f65de6f"
+UrlParser.getParam( "isTest" ); // null
+UrlParser.getParam( "notExist" ); // undefined
 ```
 
 **checkIfExist( key )** - check if given key exists in URL
@@ -31,7 +31,7 @@ getParam( "notExist" ); // undefined
 http://someurl.com/?appId=1f4d06a3690f46d56bd1da598f65de6f&BID=3051&isTest#/
 ```
 ```javascript
-checkIfExist( "appId" ); // true
-checkIfExist( "isTest" ); // true
-checkIfExist( "notExist" ); // false
+UrlParser.checkIfExist( "appId" ); // true
+UrlParser.checkIfExist( "isTest" ); // true
+UrlParser.checkIfExist( "notExist" ); // false
 ```
