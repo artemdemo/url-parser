@@ -61,6 +61,6 @@ var UrlParser =
 /*UrlParser.checkParam('appId')
 UrlParser.checkParam('isTest');*/
 
-console.log( UrlParser.getParam('appId') );
+/*console.log( UrlParser.getParam('appId') );
 console.log( UrlParser.getParam('isTest') );
-console.log( UrlParser.getParam('notExist') );
+console.log( UrlParser.getParam('notExist') );*/

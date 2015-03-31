@@ -3,5 +3,9 @@
   "version": "0.1.0",
   "description": "Plugin that help parse URL for GET data",
   "main": "index.html",
-  "author": "Artem Demo"
+  "author": "Artem Demo",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-uglify": "~0.8.1"
+  }
 }

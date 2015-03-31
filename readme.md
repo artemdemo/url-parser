@@ -2,7 +2,7 @@
 
 Plugin that help parse URL for GET data
 
-### Proposed API ###
+### API ###
 
 **getAll()** - return object of all data
 ```
