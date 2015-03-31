@@ -1,0 +1,7 @@
+{
+  "name": "url-parser",
+  "version": "0.1.0",
+  "description": "Plugin that help parse URL for GET data",
+  "main": "index.html",
+  "author": "Artem Demo"
+}
