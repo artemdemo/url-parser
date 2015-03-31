@@ -2,6 +2,9 @@ var UrlParser =
 	(function(){
 		"use strict";
 
+		/**
+		 * Main object of the plugin
+		 */
 		var UrlParser = {};
 
 		/**
@@ -13,7 +16,7 @@ var UrlParser =
 		 */
 		UrlParser.getParam = function( key ) {
 			var match = RegExp('[?&]' + key + '=([^&]*)').exec(window.location.href);
-            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+			return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 		}
 
 		return UrlParser;
