@@ -49,7 +49,7 @@ var UrlParser =
 		 * @param key {String}
 		 * @return {Boolean}
 		 */
-		UrlParser.checkParam = function( key ) {
+		UrlParser.checkIfExist = function( key ) {
 			var allObject = this.getAll();
 			return allObject.hasOwnProperty( key );
 		};

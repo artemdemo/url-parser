@@ -26,12 +26,12 @@ getParam( "isTest" ); // null
 getParam( "notExist" ); // undefined
 ```
 
-**checkParam( key )** - check if given key exists in URL
+**checkIfExist( key )** - check if given key exists in URL
 ```
 http://someurl.com/?appId=1f4d06a3690f46d56bd1da598f65de6f&BID=3051&isTest#/
 ```
 ```javascript
-getParam( "appId" ); // true
-getParam( "isTest" ); // true
-getParam( "notExist" ); // false
+checkIfExist( "appId" ); // true
+checkIfExist( "isTest" ); // true
+checkIfExist( "notExist" ); // false
 ```
