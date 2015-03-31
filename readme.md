@@ -8,7 +8,7 @@ Plugin that help parse URL for GET data
 ```
 http://someurl.com/?appId=1f4d06a3690f46d56bd1da598f65de6f&BID=3051&isTest#/
 ```
-```
+```javascript
 {
 	appId: "1f4d06a3690f46d56bd1da598f65de6f",
 	BID: "3051",
@@ -20,7 +20,7 @@ http://someurl.com/?appId=1f4d06a3690f46d56bd1da598f65de6f&BID=3051&isTest#/
 ```
 http://someurl.com/?appId=1f4d06a3690f46d56bd1da598f65de6f&BID=3051&isTest#/
 ```
-```
+```javascript
 getParam( "appId" ); // "1f4d06a3690f46d56bd1da598f65de6f"
 getParam( "isTest" ); // null
 getParam( "notExist" ); // undefined
@@ -30,7 +30,7 @@ getParam( "notExist" ); // undefined
 ```
 http://someurl.com/?appId=1f4d06a3690f46d56bd1da598f65de6f&BID=3051&isTest#/
 ```
-```
+```javascript
 getParam( "appId" ); // true
 getParam( "isTest" ); // true
 getParam( "notExist" ); // false
