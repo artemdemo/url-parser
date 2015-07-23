@@ -27,28 +27,42 @@
         };
 
         /**
-         * return object of all data
-         *
+         * Return object with all GET data from the URL
          * @return {Object}
          */
         urlParser.getAll = function() {
-            var newUrlParams;
+            var urlParams;
             var match,
                 _param,
                 pl     = /\+/g,  // Regex for replacing addition symbol with a space
                 search = /([^&=]+)=?([^&]*)/g,
                 decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-                query  = window.location.search.substring(1);
+                query  = window.location.href,
+                qMarkIndex = query.indexOf('?'),
+                hashIndex = query.indexOf('#/');
 
-            newUrlParams = {};
-            while (match = search.exec(query)) {
-                _param = decode(match[2]);
-                newUrlParams[decode(match[1])] = _param == "" ? null : _param;
+            hashIndex = hashIndex == -1 ? 0 : hashIndex;
+
+            // It can be 2 different cases:
+            // 1) http://someurl.com/app/?param1=somedata#/pagename
+            // 2) http://someurl.com/app/#/pagename?param1=somedata
+            // In both ways it should work properly
+            // Therefore I'm cutting only relevant part from the URL - part between # and ?
+            switch(true) {
+                case qMarkIndex > hashIndex:
+                    query = query.substr( qMarkIndex + 1 );
+                    break;
+                case qMarkIndex < hashIndex:
+                    query = query.substr( qMarkIndex + 1 , hashIndex - qMarkIndex - 1 );
+                    break;
             }
 
-            console.log('%cUrl parameters loaded (urlParser)', 'color: green');
+            urlParams = {};
+            while (match = search.exec(query)) {
+                _param = decode(match[2]);
+                urlParams[decode(match[1])] = _param == "" ? null : _param;
+            }
 
-            urlParams = newUrlParams;
             return urlParams;
         };
 
